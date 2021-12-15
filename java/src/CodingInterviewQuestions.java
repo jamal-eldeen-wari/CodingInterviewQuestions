@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class CodingInterviewQuestions {
@@ -79,31 +80,18 @@ public int romanToInt(String s) {
 }
 
 // -------------------------------LongestCommonPrefix------------------------------------------
-public String longestCommonPrefix(String[] strs) {
+public String longestCommonPrefix(String[] str) {
     String result = "";
-    for(int i = 0; i<strs.length-1; i++){
-        if(strs[i].charAt(i) == strs[i+1].charAt(i)){
-            result = result+strs[i].charAt(i);
+    for(int i = 0; i<str.length-1; i++){
+        if(str[i].charAt(i) == str[i+1].charAt(i)){
+            result = result+str[i].charAt(i);
         }else{
             result = "";
         }
     }
     return result;
-//    if (strs.length==0) return "";
-//    String prefix=strs[0];
-//    for (int i=1;i<strs.length;i++)
-//    {
-//        while(strs[i].indexOf(prefix)!=0)
-//        {
-//            prefix=prefix.substring(0,prefix.length()-1);
-//        }
-//
-//    }
-//    return prefix;
-
-
-
 }
+//-------------------------------------- Match brackets--------------------------------------
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
         for(char ch: s.toCharArray()){
@@ -123,4 +111,22 @@ public String longestCommonPrefix(String[] strs) {
         }
         return stack.isEmpty();
     }
+
+//--------------------------------------MergeTwoSortedLists----------------------------------
+public LinkedListNode mergeTwoLists(LinkedListNode list1, LinkedListNode list2) {
+    if(list1 == null){
+        return list2;
+    }
+    if(list2 == null){
+        return list1;
+    }
+    if(list1.getData() >= list2.getData()){
+        list2.setNext(mergeTwoLists(list1,list2.getNext()));
+        return list2;
+    }
+    else{
+        list1.setNext(mergeTwoLists(list1.getNext(), list2));
+        return list1;
+    }
+}
 }
