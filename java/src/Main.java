@@ -14,5 +14,9 @@ public class Main {
 //       ---------------------------RomanInt-----------------------------------------------
         System.out.println(codingInterviewQuestions.romanToInt("III"));
 
+//        -------------------------LongestCommonPrefix-------------------------------------
+        String [] str = new String[]{"flower","flow","flight"};
+        System.out.println(codingInterviewQuestions.longestCommonPrefix(str));
+
     }
 }
