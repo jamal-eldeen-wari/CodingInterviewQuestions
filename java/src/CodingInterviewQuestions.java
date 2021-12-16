@@ -1,3 +1,7 @@
+import groovy.console.ui.AstBrowser;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Stack;
 
@@ -128,5 +132,68 @@ public LinkedListNode mergeTwoLists(LinkedListNode list1, LinkedListNode list2) 
         list1.setNext(mergeTwoLists(list1.getNext(), list2));
         return list1;
     }
+}
+
+public void productsStartingWithLetters(String [] str){
+
+        for (int i = 0; i<str.length; i++){
+            switch (str[i].charAt(0)){
+                case 'A':
+                    System.out.print(" { "+str[i]+" } ");
+                    break;
+
+                case 'E':
+                    System.out.print(" { "+str[i]+" } ");
+                    break;
+
+                case 'I':
+                    System.out.print(" { "+str[i]+" } ");
+                    break;
+                case 'O':
+                    System.out.print(" { "+str[i]+" } ");
+                    break;
+                case 'U':
+                    System.out.print(" { "+str[i]+" } ");
+                    break;
+
+                default:
+                    break;
+            }
+        }
+}
+public void charLength(String [] str){
+        int count ;
+        for (int i = 0; i<str.length; i++){
+            count = 0;
+            for (int j = 0; j<str[i].length();j++){
+                count++;
+                if (count>5){
+                    System.out.print(" { "+str[i]+" } ");
+                    break;
+                }
+            }
+        }
+}
+
+public void stringCounter(String str){
+//        String[] spliter = str.split("");
+//    System.out.println(Arrays.toString(spliter));
+    int digitCount = 0;
+    int letterCount = 0;
+    int whiteSpaceCount = 0;
+    for (int i = 0; i<str.length(); i++){
+        if (Character.isDigit(str.charAt(i))){
+            digitCount++;
+        }else if (Character.isAlphabetic(str.charAt(i))){
+            letterCount++;
+        }else{
+            whiteSpaceCount++;
+        }
+    }
+    System.out.println("Letters => "+letterCount);
+    System.out.println("Numbers => "+digitCount);
+    System.out.println("Special Characters (Including Spaces) =>"+whiteSpaceCount);
+
+
 }
 }

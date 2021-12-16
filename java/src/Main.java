@@ -18,8 +18,22 @@ public class Main {
         String [] str = new String[]{"flower","flow","flight"};
         System.out.println(codingInterviewQuestions.longestCommonPrefix(str));
 
-//        -------------------------MergeTwoListsSorted-------------------------------------
-        
+//        -------------------------StartingWithLetters-------------------------------------
+//        [“Apple”, “Banana”, “Cucumber”, “Watermelon”, “Ice-cream”, “Orange”, “Eggplant”,
+//“Egg”]
+        String [] words = new String[]{"Apple", "Banana","Cucumber","Watermelon","Ice-cream","Orange","Eggplant","Egg" };
+        System.out.println("productsStartingWithLetters");
+        codingInterviewQuestions.productsStartingWithLetters(words);
+        System.out.println();
+        System.out.println("charLength");
+        codingInterviewQuestions.charLength(words);
+
+//        ----------------------Logic3------------------------------------------
+        String str1 = "THis & * 12345678z_k ";
+        System.out.println();
+        codingInterviewQuestions.stringCounter(str1);
+
+
 
     }
 }
